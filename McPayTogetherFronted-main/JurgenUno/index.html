@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="menuApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>McPayTogether</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="owo.js"></script>
+</head>
+<body ng-controller="MenuCtrl">
+
+  <!-- HEADER -->
+  <header class="header-bar">
+    <h1 class="logo">McPayTogether</h1>
+    <span class="icon menu-icon" ng-click="toggleMenu()">☰</span>
+  </header>
+  
+  <!-- PERSONALIZA TU MENÚ OPCIONAL -->
+  <section class="section">
+    <h2 class="section-title">Personaliza tu menú (opcional)</h2>
+    <div class="field-col">
+      <label>¿Cómo te sientes hoy?</label>
+      <input type="text" ng-model="sentiHoy" placeholder="·······">
+    </div>
+    <div class="field-col">
+      <label>¿Cuál es tu rol en el grupo?</label>
+      <input type="text" ng-model="rolGrupo" placeholder="·······">
+    </div>
+    <div class="field-col">
+      <label>¿Qué tipo de comida prefieres hoy?</label>
+      <input type="text" ng-model="tipoComida" placeholder="·······">
+    </div>
+  </section>
+
+  <!-- BOTÓN GENERAR LINK -->
+  <div class="button-container">
+    <button class="btn-generate" ng-click="generarLink()">Generar link</button>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

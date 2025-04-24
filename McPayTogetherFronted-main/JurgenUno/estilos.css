@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.4;
+  }
+  
+  .header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .logo {
+    margin: 0;
+    font-size: 20px;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  /* Section titles */
+  .section {
+    padding: 20px;
+  }
+  
+  .section-title {
+    margin: 0 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Field rows (etiqueta + puntos + valor) */
+  .field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  
+  .field-row label {
+    flex: 0 0 140px;
+    font-weight: bold;
+  }
+  
+  .field-row .dots {
+    flex: 0 0 60px;
+    text-align: center;
+    color: #aaa;
+  }
+  
+  .field-row .value {
+    flex: 1;
+    font-weight: bold;
+    text-align: right;
+  }
+  
+  /* Campos de texto en columna */
+  .field-col {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .field-col label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .field-col input {
+    padding: 8px 10px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .field-col input:focus {
+    border-color: #fbbd08;
+  }
+  
+  /* Botón Generar Link */
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 20px;
+  }
+  
+  .btn-generate {
+    background-color: #f25a39;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  
+  .btn-generate:active {
+    transform: translateY(1px);
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .field-row label {
+      flex: 0 0 120px;
+      font-size: 14px;
+    }
+    .section-title {
+      font-size: 16px;
+    }
+    .btn-generate {
+      width: 100%;
+      text-align: center;
+    }
+  }

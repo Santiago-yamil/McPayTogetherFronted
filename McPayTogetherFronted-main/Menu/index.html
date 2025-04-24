@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="menu.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+
+  <div class="top-bar">
+    <div class="search-box">
+      <input type="text" ng-model="searchQuery" placeholder="Search">
+    </div>
+    <div class="icons">
+
+      <div class="menu-icon" ng-click="toggleMenu()">🔲</div>
+      <div class="menu-carrito" ng-click="toggleMenu()">🛒</div>
+      <div class="menu-icon" ng-click="toggleMenu()">☰</div>
+      
+
+
+    </div>
+  </div>
+<div class="menu-container">
+  <div class="menu-item" ng-repeat="item in menuItems">
+    <img ng-src="{{item.img}}" alt="{{item.nombre}}" class="menu-img">
+    <div class="menu-text">
+      {{item.nombre}} <span class="precio">{{item.precio | currency}}</span>
+    </div>
+  </div>
+</div>
+
+  
+
+</body>
+</html>

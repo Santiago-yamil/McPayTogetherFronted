@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" ng-app="miApp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menú</title>
+  <link rel="stylesheet" href="estilo.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+  <script src="menu.js"></script>
+</head>
+<body ng-controller="MenuCtrl">
+
+  <div class="top-bar">
+    <div class="search-box">
+      <input type="text" ng-model="searchQuery" placeholder="Search">
+    </div>
+    <div class="icons">
+      <div class="menu-icon" ng-click="toggleMenu()">🔲</div>
+      <div class="menu-carrito" ng-click="toggleMenu()">🛒</div>
+      <div class="menu-icon" ng-click="toggleMenu()">☰</div>
+    </div>
+  </div>
+
+  
+
+
+
+  <div class="usuarios-container" ng-controller="UsuariosCtrl">
+    <div class="usuario-item" ng-repeat="usuario in usuarios">
+      <img ng-src="{{usuario.foto}}" alt="Foto de {{usuario.nombre}}" class="usuario-foto">
+      
+      <div class="usuario-info">
+        <div class="usuario-nombre">{{usuario.nombre}}</div>
+        <ul class="usuario-pedidos">
+          <li ng-repeat="item in usuario.pedido">
+            {{item.nombre}} <span class="precio">{{item.precio | currency}}</span>
+          </li>
+        </ul>
+        <div class="usuario-total">Total: <span class="precio">{{usuario.total | currency}}</span></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="resumen-total" ng-controller="UsuariosCtrl">
+    <span>Total: <strong>${{total}}</strong></span>
+    <span class="separador"></span>
+    <span>La persona a pagar es: <strong>{{persona}}</strong></span>
+  </div>
+  
+  <div class="metodos-pago">
+    <div class="metodo">
+      <p class="metodo-texto">Efectivo</p>
+      <img src="billetes.webp" alt="Pago en efectivo" class="metodo-imagen">
+    </div>
+  
+    <div class="metodo">
+      <p class="metodo-texto">Tarjeta</p>
+      <img src="tarjeta.webp" alt="Pago con tarjeta" class="metodo-imagen">
+    </div>
+  </div>
+  
+  
+
+</body>
+</html>
